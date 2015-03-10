@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+    <meta charset="utf-8">
+    <title>Bootstrap Map Resources</title>
+    <meta name="generator" content="Bootstrap-map-resources" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="shortcut icon" href="http://esri.github.io/bootstrap-map-js/demo/images/favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- Bootstrap-map-js -->
+    <!-- <link rel="stylesheet" type="text/css" href="http://esri.github.io/bootstrap-map-js/src/css/bootstrapmap.css">    -->
+
+    <link href="http://jsdev.arcgis.com/4.0beta1/esri/css/esri.css" rel="stylesheet" type="text/css">
+
+    <style type="text/css">
+
+      html,body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        padding-bottom: 20px;
+      }
+
+      #map {
+        width: 100%;
+        height: 100%;
+      }
+
+      .navbar-inverse .navbar-brand {
+        color: #fff;
+      }
+
+      .hero {
+        position: absolute;
+        bottom: 0;
+        color: #f3f3f3;
+        text-align: center;
+        width: 100%
+      }
+
+      
+      /* CUSTOMIZE THE NAVBAR
+      -------------------------------------------------- */
+
+      /* Special class on .container surrounding .navbar, used for positioning it into place. */
+      .navbar-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 29;
+      }
+
+      .navbar-container {
+        z-index: 100;
+        color: #f3f3f3;
+      }
+
+      /* RESPONSIVE CSS
+      -------------------------------------------------- */
+
+      @media (min-width: 768px) {
+
+       .navbar-container {
+          padding-right: 35px;
+          padding-left: 35px;
+        }
+
+        /* Navbar positioning foo */
+        .navbar-wrapper {
+          margin-top: 20px;
+          margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+        }
+        /* The navbar becomes detached from the top, so we round the corners */
+        .navbar-wrapper .navbar {
+          border-radius: 4px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .esriSimpleSliderTL {
+          top: 65px;
+        }
+
+        .navbar-container {
+          margin-right: 0;
+          margin-left: 0;
+          padding-right: 0;
+          padding-left: 0;
+        }
+
+        h3 {
+          font-size: 15px;
+        }
+     
+      }
+
+  </style>
+
+  </head>
+
+  <body class="dark">
+    <div class="navbar-wrapper">
+      <div class="container navbar-container">
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="navbar-header"> <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </a>
+                <a class="navbar-brand" href="index.html" contenteditable="false">Bootstrap Map Resources</a>
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown" id="">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Bootstrap <b class="caret"></b></a>
+                        <ul class="dropdown-menu" id="myDropdown">
+                          <li><a target="_blank" href="http://www.getbootstrap.com">GetBootstrap</a></li>
+                          <li><a target="_blank" href="http://www.github.com/Esri/bootstrap-map-js">Bootstrap-map-js</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Themes <b class="caret"></b></a>
+                        <ul class="dropdown-menu" id="myDropdown">
+                            <li><a target="_blank" href="https://bootswatch.com/">Bootswatch (free)</a></li>
+                            <li><a target="_blank" href="https://wrapbootstrap.com/?ref=bsw">Wrapbootstrap</a></li>
+                            <li><a target="_blank" href="http://bootstraphero.com/the-big-badass-list-of-twitter-bootstrap-resources">Bootstraphero Bad Ass List</a></li>
+                            <li class="divider"></li>
+                            <li><a target="_blank" href="http://www.bootstrapzero.com/bootstrap-templates/dashboard">Bootstrapzero Dashboard</a></li>
+                            <li><a target="_blank" href="http://bootsnipp.com/">Bootsnip Elements</a></li>
+                            <li class="divider"></li>
+                            <li><a target="_blank" href=" http://keen.github.io/dashboards/examples/">Keen.io Dashboards</a></li>
+                            <li><a target="_blank" href="http://fezvrasta.github.io/bootstrap-material-design/bootstrap-elements.html">Material Design</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Dojo <b class="caret"></b></a>
+                        <ul class="dropdown-menu" id="myDropdown">
+                            <li><a target="_blank" href="http://xsokev.github.io/Dojo-Bootstrap/">Dojo Bootstrap</a></li>
+                            <li><a target="_blank" href="https://github.com/Esri/dojo-bootstrap-map-js">Dojo Bootstrap Map</a></li>
+                            <li class="divider"></li>
+                            <li><a target="_blank" href="http://tomwayson.github.io/responsive-citizens/index.html">Citizen Mobile Demo</a></li>
+                            <li><a target="_blank" href="http://tomwayson.github.io/responsive-citizens/dashboard.html">Dashboard Demo</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Build <b class="caret"></b></a>
+                        <ul class="dropdown-menu" id="myDropdown">
+                            <li><a target="_blank" href="https://jso.arcgis.com/">ArcGIS JS Optimizer</a></li>
+                            <li class="divider"></li>
+                            <li><a target="_blank" href="https://github.com/steveoh/grunt-esri-slurp">Grunt Esri Slurp</a></li>
+                            <li><a target="_blank" href="https://github.com/tomwayson/esri-slurp-example">Grunt Esri Slurp Demo</a></li>
+                            <li class="divider"></li>
+                            <li><a target="_blank" href="https://github.com/dbouwman/modern-web-dev-workshop/blob/master/plan.md">Esri Modern Web Apps Workshop</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /navbar wrapper -->
+
+<!-- Bootstrap-map-js -->
+<div id="map"></div>
+
+  <div class="hero">        
+    <hgroup>
+        <h3><a href="github.com/alaframboise/bootstrap-map-resources">github.com/alaframboise/bootstrap-map-resources</a></h3>
+    </hgroup>
+  </div>
+
+  <script src="http://jsdev.arcgis.com/4.0beta1/"></script>
+  
+  <script type="text/javascript">
+ 
+    var map;
+
+    require([
+      "esri/Map",
+      "esri/layers/ArcGISTiledMapServiceLayer",
+      "esri/layers/ArcGISElevationLayer",
+      "dojo/dom",
+  
+      "dojo/domReady!"
+    ], function(
+      Map, ArcGISTiledMapServiceLayer, ArcGISElevationLayer, dom
+    ) {
+
+      map = new Map(dom.byId("map"), {
+        viewType: "3d"
+      });
+
+      // map.add(new ArcGISTiledMapServiceLayer("http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer"));
+      // map.add(new ArcGISTiledMapServiceLayer("http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer"));
+
+      map.add(new ArcGISTiledMapServiceLayer("http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"));
+      map.add(new ArcGISElevationLayer("http://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer"), 0);
+      
+   
+    });
+  </script>
+  
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+   
+  </body>
+</html>
