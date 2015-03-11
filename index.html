@@ -180,19 +180,24 @@
   
   <script type="text/javascript">
  
-    var map;
+    var map, 
+      timer, 
+      camera,
+      fps = 15;
 
     require([
-      "esri/Map",
-      "esri/layers/ArcGISTiledMapServiceLayer",
-      "esri/layers/ArcGISElevationLayer",
-      "dojo/dom",
-  
-      "dojo/domReady!"
-    ], function(
-      Map, ArcGISTiledMapServiceLayer, ArcGISElevationLayer, dom
-    ) {
+        "esri/Map",
+        "esri/layers/ArcGISTiledMapServiceLayer",
+        "esri/layers/ArcGISElevationLayer",
 
+        "dojo/on", "dojo/query", "dojo/keys",
+        "dojo/dom",
+
+        "dojo/domReady!"
+    ], function(
+        Map, ArcGISTiledMapServiceLayer, ArcGISElevationLayer, on, query, keys, dom
+    ) {
+      
       map = new Map(dom.byId("map"), {
         viewType: "3d"
       });
@@ -202,8 +207,54 @@
 
       map.add(new ArcGISTiledMapServiceLayer("http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"));
       map.add(new ArcGISElevationLayer("http://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer"), 0);
-      
-   
+
+      map.then(function() {
+            // Prevent navigation
+            map.view.navigationController.destroy();
+
+        // on(map.view.navigationController, "keydown", function(event) {
+        //     event.preventDefault();
+        //     event.stopPropagation();
+        //     return false;
+        // });
+            camera = map.view.get("camera");
+            animate();
+        });
+
+        function animate() {
+            setTimeout( function(){
+                // Animate
+                requestAnimationFrame(animate);
+                // Move map
+                if (fps > 0) {
+                    var p = map.view.get("center");
+                    var lon = p.get("longitude");
+                    if (lon <= -180) {
+                    lon = 180;
+                    }
+                    lon = lon - .5;
+                    p.set("longitude",lon);
+                    p.z = 0;
+                    p.hasZ = true;
+                    map.view.set("center", p);
+                }
+            }, 500 / fps);
+        }
+
+        on(document, "keydown", function(event) {
+            switch(event.keyCode) {
+              case keys.UP_ARROW:                  
+                    hit = true;
+                    fps += fps > 45 ? 0 : 5;
+                    break;
+              case keys.DOWN_ARROW:
+                    hit = true;
+                    fps -= fps > 0 ? 5 : 0;
+                    break;
+            }
+            //console.log(fps);
+        });
+         
     });
   </script>
   
